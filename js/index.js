@@ -131,7 +131,7 @@ const zonked = {
 
             zonked.insertDelivery()
 
-        })
+        }) 
         .catch((error) => {
             console.error('Error:', error)
         })

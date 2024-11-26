@@ -1122,7 +1122,7 @@ const util = {
                 switch ( logData.grp_id){
                     case "1":
                         zonked.insertSection()
-                        util.scrollsTo('current_projects')  
+                        util.scrollsTo('current_projects')   
                         zonked.insertDelivery()
 
                     break
