@@ -1129,6 +1129,7 @@ const util = {
 
                     case "3"://SIR BENNEY
                         util.user_id = logData.user_id
+                        zonked.insertDashboard()
                         zonked.cronJob()
                     break
                     default:
