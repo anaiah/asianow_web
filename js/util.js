@@ -884,7 +884,7 @@ const util = {
                     xmsg = "<div><i class='fa fa-spinner fa-pulse' ></i>  Searching Database please wait...</div>"
                     util.alertMsg( xmsg,'danger','loginPlaceHolder')
 
-                    util.loginPost(frm ,frmModal,`http://192.168.157.140:10000/loginpost/${objfrm.uid}/${objfrm.pwd}/${objfrm.branch}`)
+                    util.loginPost(frm ,frmModal,`${ipconfig}/asia/loginpost/${objfrm.uid}/${objfrm.pwd}/${objfrm.branch}`)
                     //util.loginPost(frm ,frmModal,`https://osndp.onrender.com/loginpost/${objfrm.uid}/${objfrm.pwd}`)
                 break
             
@@ -956,7 +956,7 @@ const util = {
                 //==HANDSHAKE FIRST WITH SOCKET.IO
                 const userName = { token : authz[1] , branch: document.getElementById("branch").value, mode: 1}//full name token
 
-                zonked.socket = io.connect("http://192.168.157.140:10000", {
+                zonked.socket = io.connect(`${ipconfig}`, {
                 //zonked.socket = io.connect("https://osndp.onrender.com", {
                     //withCredentials: true,
                     query:`userName=${JSON.stringify(userName)}`
@@ -1127,9 +1127,9 @@ const util = {
 
                     break
 
-                    case "2"://doctor
+                    case "3"://SIR BENNEY
                         util.user_id = logData.user_id
-                        zonked.getpatientBooking(1,util.user_id,'')
+                        zonked.cronJob()
                     break
                     default:
                     break
@@ -1178,6 +1178,7 @@ const util = {
             break
             
             case "3": //if grpid 3 admin people 
+            /*()
                 origLImenu += `
                 <!--//PLS ADD TO MOBILE//-->
                 <li class="nav-item dropdown">
@@ -1191,7 +1192,7 @@ const util = {
                     </div>
                 </li>
                 
-                `//    
+                `//    */
             break
             //pls add to mobile
             case "2": //if grpid 2 doctors 

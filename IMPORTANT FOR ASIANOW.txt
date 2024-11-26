@@ -5,6 +5,8 @@
 
 2) before fully assigning packages, scan qr code of rider ID, to verify attendance
 
-3) divide the warehouses per RBU? if they have? so the sql statement wont be that big 
+3) divide the warehouses per RBU / SBU? if they have? so the sql statement wont be that big 
 
 4) all savings must be offlinefirst?  thenif there' clear signal for  internet,upload them all
+
+5) insrt features like i've done cafe sta.ana, order, voice msg to kitchen

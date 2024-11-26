@@ -107,7 +107,7 @@ const zonked = {
 
     //tag delivry
     tagDelivery: async( deliveryId, branch)=>{
-        fetch(`http://192.168.157.140:10000/asia/tagdelivery/${deliveryId}/${document.getElementById('branch').value}}`)
+        fetch(`${ipconfig}/asia/tagdelivery/${deliveryId}/${document.getElementById('branch').value}}`)
         .then((response) => {  //promise... then
             return response.json();
         })
@@ -137,12 +137,43 @@ const zonked = {
         })
     }, 
     
+    //====CRON JOB TO GET DASHBOARD===
+    cronJob: () =>{
+        setInterval( zonked.insertDashboard, 10000 );
+    },
+
+
+
+    //BENNY BERNABE
+    insertDashboard: async ()=>{//called by filterbyexpertise()  for patient history
+        console.log('fired=== dashboard')
+        //fetch(`https://osndp.onrender.com/gethistory/${util.getCookie('f_userid')}`)
+        fetch(`${ipconfig}/asia/getdashboard`)
+        .then((response) => {  //promise... then
+            return response.text();
+        })
+        .then((text) => {
+
+            document.getElementById('dashboard').innerHTML = "" 
+
+            const txt = `<div class="container-fluid">
+                <div>${text}</div>
+                </div>`
+            document.getElementById('dashboard').innerHTML = txt
+
+            return true
+
+        })
+        .catch((error) => {
+            console.error('Error:', error)
+        })
+    },
 
     //pls add to mobile
     insertDelivery: async ()=>{//called by filterbyexpertise()  for patient history
         console.log('fired=== insertHisttory(v2)==')
         //fetch(`https://osndp.onrender.com/gethistory/${util.getCookie('f_userid')}`)
-        fetch(`http://192.168.157.140:10000/asia/getdelivery/${util.getCookie('f_userid')}/${document.getElementById('branch').value}`)
+        fetch(`${ipconfig}/asia/getdelivery/${util.getCookie('f_userid')}/${document.getElementById('branch').value}`)
         .then((response) => {  //promise... then
             return response.text();
         })
