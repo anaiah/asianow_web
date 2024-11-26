@@ -946,7 +946,7 @@ const util = {
                     voice : data.voice,
                     pic:    data.pic,
                     user_id:data.id
-
+ 
                 }
 
                 let authz = []

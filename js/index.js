@@ -55,7 +55,7 @@ const zonked = {
             console.error('Error:', error)
         })
     },
-
+ 
     //get all for approval
     getapprovalReg: async()=>{
         console.log('fired===getapprovalReg()')
