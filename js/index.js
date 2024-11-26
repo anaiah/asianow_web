@@ -138,7 +138,7 @@ const zonked = {
     }, 
     
     //====CRON JOB TO GET DASHBOARD===
-    cronJob: () =>{
+    cronJob: () =>{ 
         setInterval( zonked.insertDashboard(), 20000 );
     },
 
