@@ -179,12 +179,12 @@ const zonked = {
         })
         .then((text) => {
 
-            document.getElementById('history').innerHTML = "" 
+            document.getElementById('dashboard').innerHTML = "" 
 
             const txt = `<div class="container-fluid">
                 <div>${text}</div>
                 </div>`
-            document.getElementById('history').innerHTML = txt
+            document.getElementById('dashboard').innerHTML = txt
 
             return true
 
