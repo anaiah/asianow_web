@@ -161,7 +161,7 @@ const zonked = {
                 </div>`
             document.getElementById('dashboard').innerHTML = txt
 
-            return true
+            //return true
 
         })
         .catch((error) => {
@@ -186,7 +186,7 @@ const zonked = {
                 </div>`
             document.getElementById('dashboard').innerHTML = txt
 
-            return true
+            //return true
 
         })
         .catch((error) => {
