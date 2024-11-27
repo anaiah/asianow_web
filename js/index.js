@@ -139,13 +139,14 @@ const zonked = {
     
     //====CRON JOB TO GET DASHBOARD===
     cronJob: () =>{ 
-        setInterval( zonked.insertDashboard(), 20000 );
+        let intervalid
+        intervalid = setInterval( zonked.insertDashboard(), 25000 );
     },
 
 
 
     //BENNY BERNABE
-    insertDashboard: async ()=>{//called by filterbyexpertise()  for patient history
+    insertDashboard: ()=>{//called by filterbyexpertise()  for patient history
         console.log('fired=== dashboard')
         //fetch(`https://osndp.onrender.com/gethistory/${util.getCookie('f_userid')}`)
         fetch(`${ipconfig}/asia/getdashboard`)
